@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Water Intake</string>
+    <string name="Weight">Weight</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="calcTotIntake">Calculate</string>
+    <string name="inputData">Input your information to customize your hydration plan</string>
+    <string name="title_activity_daily_intake">DailyIntake</string>
+    <string name="DailyLog">Today\'s Log</string>
+    <string name="AddWater">Add Water</string>
+    <string name="dailyWater">Daily Goal</string>
+    <string name="waterVolume">650 / 1000 ml</string>
+    <string name="next">Next</string>
+    <string name="add_drink_button">Add a drink</string>
+    <string name="btn_reminder">Reminder</string>
+    <string name="History">Today\'s Log</string>
+    <string name="activityLevel">Activity Level</string>
+
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+</resources>
