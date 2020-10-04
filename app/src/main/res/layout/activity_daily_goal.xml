@@ -27,7 +27,7 @@
         android:paddingLeft="10dp"
         android:paddingTop="20dp"
         android:paddingRight="10dp"
-        android:text="65%"
+        android:text="38%"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="100px"

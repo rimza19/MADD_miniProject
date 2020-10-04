@@ -10,7 +10,7 @@
     <string name="DailyLog">Today\'s Log</string>
     <string name="AddWater">Add Water</string>
     <string name="dailyWater">Daily Goal</string>
-    <string name="waterVolume">650 / 1000 ml</string>
+    <string name="waterVolume">1200 / 3180 ml</string>
     <string name="next">Next</string>
     <string name="add_drink_button">Add a drink</string>
     <string name="btn_reminder">Reminder</string>
@@ -35,5 +35,7 @@
     <string name="activitylevel1">Sedentary</string>
     <string name="activitylevel_2">Moderately Active</string>
     <string name="activitylevel_3">Active</string>
+    <string name="customVol">Add the water volume</string>
+    <string name="cusVolume">Enter the water volume :</string>
 
 </resources>

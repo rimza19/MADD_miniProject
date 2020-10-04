@@ -62,10 +62,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   /* public void openNewActivity(){
-        Intent intent = new Intent(this,DailyGoal.class);
-        startActivity(intent);
-    }*/
+    public float setGoal(float w){
+        float weight = w;
+        // Daily water requirement = body weight * 2/3 + water according to the activity level  (lb)
+        //1.47 denotes the kg-> pounds conversion * 3/2
+        float goalPounds = weight * (float)1.47 + res;
+        //0.0283 denotes the conversion to Ltrs.
+        float goalLtrs = goalPounds * (float)0.0285;
+        return goalLtrs;
+    }
+
 
     public void addListenerOnButton() {
 
@@ -95,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 float goalPounds = water * (float)1.47 + res;
                 float goalLtrs = goalPounds * (float)0.02835;
 
-
+                Toast.makeText(getApplicationContext(),"Today's Goal is calculating..",Toast.LENGTH_LONG).show();
                 result.setText(String.valueOf(s));
 
                 Intent intent = new Intent(getApplicationContext(),DailyGoal.class);
@@ -105,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
     }
 
