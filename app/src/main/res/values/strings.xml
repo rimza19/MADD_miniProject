@@ -69,4 +69,10 @@
     <string name="profile">PROFILE</string>
     <string name="new_dish">Dish Name</string>
     <string name="cal">Calories per 100g</string>
+    <string name="reg">Register</string>
+    <string name="exercises">workout</string>
+    <string name="sta">statistic</string>
+    <string name="exit">Exit</string>
+    <string name="call">Calorie Tracker</string>
+    <string name="water">Water consumption</string>
 </resources>

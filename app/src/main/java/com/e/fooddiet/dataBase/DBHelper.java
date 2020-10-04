@@ -129,6 +129,46 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    public List readAccDetails(){
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection ={
+                CalorieMaster.Calorie._ID,
+                CalorieMaster.Calorie.ACC_COLUMN_EMAIL_reg,
+                CalorieMaster.Calorie.ACC_COLUMN_DOB_reg ,
+                CalorieMaster.Calorie.ACC_COLUMN_GENDER_reg ,
+                CalorieMaster.Calorie.ACC_COLUMN_ACTIVE_reg ,
+                CalorieMaster.Calorie.ACC_COLUMN_HEIGHT_reg ,
+                CalorieMaster.Calorie.ACC_COLUMN_WEIGHT_reg ,
+                CalorieMaster.Calorie.ACC_COLUMN_GWEIGHT_reg
+        };
+
+        Cursor cursor = db.query(CalorieMaster.Calorie.ACCOUNT_TABLE2,projection,null,null,
+                null,null,null) ;
+
+        List Email = new ArrayList<>();
+        List DOB = new ArrayList<>();
+        List Gender = new ArrayList<>();
+        List Active = new ArrayList<>();
+        List Height = new ArrayList<>();
+        List weight = new ArrayList<>();
+        List Goal_weight = new ArrayList<>();
+
+        while (cursor.moveToNext()){
+            String email = cursor.getString(cursor.getColumnIndexOrThrow(CalorieMaster.Calorie.ACC_COLUMN_EMAIL_reg));
+            String dob = cursor.getString(cursor.getColumnIndexOrThrow(CalorieMaster.Calorie.ACC_COLUMN_DOB_reg));
+            String gweight = cursor.getString(cursor.getColumnIndexOrThrow(CalorieMaster.Calorie.ACC_COLUMN_GWEIGHT_reg ));
+            String Weight = cursor.getString(cursor.getColumnIndexOrThrow(CalorieMaster.Calorie.ACC_COLUMN_WEIGHT_reg));
+           Email.add(email);
+            DOB.add(dob);
+            weight.add(Weight);
+            Goal_weight.add(gweight);
+        }
+
+        cursor.close();
+        return Email;
+
+    }
+
 
 
     public Cursor getDishes() {
@@ -188,7 +228,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return newRowID ;
     }
 
-    public void updateWeight(int cweight, int gweight) {
+    /*public void updateWeight(int cweight, int gweight) {
 
         SQLiteDatabase mDB = getReadableDatabase();
 
@@ -196,14 +236,14 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put(CalorieMaster.Calorie.WEIGHT_COLUMN_GOAL_WEIGHT , gweight);
         cv.put(CalorieMaster.Calorie.WEIGHT_COLUMN_CURRENT_WEIGHT , cweight);
 
-        /*String selection = CalorieMaster.Calorie.WEIGHT_COLUMN_GOAL_WEIGHT + " LIKE ?" ;
-        int[] selectionArgs = { cweight } ;*/
+        *//*String selection = CalorieMaster.Calorie.WEIGHT_COLUMN_GOAL_WEIGHT + " LIKE ?" ;
+        int[] selectionArgs = { cweight } ;*//*
 
 
         mDB.update(CalorieMaster.Calorie.WEIGHT_TABLE, cv, CalorieMaster.Calorie.WEIGHT_COLUMN_GOAL_WEIGHT +
                 "='" + gweight + "'", null);
     }
-
+*/
 
     public void updateDish(String name, int calories) {
 

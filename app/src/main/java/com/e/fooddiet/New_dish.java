@@ -67,7 +67,7 @@ public class New_dish extends AppCompatActivity {
         }catch (Exception e) {
             AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext()) ;
             builder.setTitle(R.string.error);
-            builder.setMessage(e.getMessage());
+            builder.setMessage("must fill fields");
             builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {

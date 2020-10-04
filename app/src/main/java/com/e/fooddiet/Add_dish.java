@@ -10,10 +10,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.e.fooddiet.dataBase.CalorieMaster;
 import com.e.fooddiet.dataBase.DBHelper;
+import com.e.fooddiet.entities.Dish;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -22,9 +25,11 @@ public class Add_dish extends AppCompatActivity {
     ImageButton okBtn , clBtn ;
     ImageButton newDish ;
     ListView list ;
+    TextView picked_dish ;
     DBHelper db ;
     ArrayList<Map<String, Object>> data;
     SimpleAdapter sAdapter;
+    File fileList ;
     long selectedElementId=-1;
 
     @Override
@@ -36,6 +41,7 @@ public class Add_dish extends AppCompatActivity {
         clBtn = findViewById(R.id.pick_dish_cancel_button);
         newDish = findViewById(R.id.newDish_add_button) ;
         list = (ListView)findViewById(R.id.pick_dish_list_ret);
+        picked_dish = (TextView)findViewById(R.id.pick_dish_picked_dish_name);
 
         db = new DBHelper(getApplicationContext());
         data =DBHelper.cursorToArrayList(db.getDishes());
@@ -49,10 +55,12 @@ public class Add_dish extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                selectedElementId = l;
+                /*selectedElementId = l;*/
+                String selected = (String)list.getItemAtPosition(i);
+                picked_dish.setText(selected);
+
             }
         });
-
 
         //creating intent
         okBtn.setOnClickListener(new View.OnClickListener() {

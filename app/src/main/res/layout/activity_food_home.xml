@@ -10,8 +10,8 @@
     android:orientation="vertical">
 
 <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     >
 
@@ -32,12 +32,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/diary" />
 
-                <Button
-                    android:id="@+id/chng_pro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorAccent"
-                    android:text="Change Profile" />
             </TableRow>
 
         </TableLayout>
@@ -232,48 +226,19 @@
             android:id="@+id/textViewCurrentWeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="2dp"
             android:ems="10"
             android:fontFamily="sans-serif-condensed-light"
             android:inputType="number"
-            android:text="@string/curWei"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/textViewGoalWeight"
             android:layout_width="118dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="2dp"
             android:fontFamily="sans-serif-condensed-light"
-            android:text="@string/goWei"
             android:textSize="18sp" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:paddingTop="30dp">
-
-        <Button
-            android:id="@+id/displaywe"
-            android:layout_width="144dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorAccent"
-            android:text="DISPLAY" />
-
-        <Button
-            android:id="@+id/UpdateWe"
-            android:layout_width="157dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorAccent"
-            android:text="update" />
 
     </LinearLayout>
 

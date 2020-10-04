@@ -18,6 +18,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.e.fooddiet.dataBase.DBHelper;
 import com.e.fooddiet.entities.Account;
@@ -115,8 +116,10 @@ public class MainActivity extends AppCompatActivity {
 
             if(db.createAcc(acc)){
 
-                Intent i = new Intent(com.e.fooddiet.MainActivity.this,FoodHome.class);
+                Intent i = new Intent(com.e.fooddiet.MainActivity.this,Dashboard.class);
                 startActivity(i);
+                Toast toast = Toast.makeText(getApplicationContext(),"Inserted successfully",Toast.LENGTH_SHORT);
+                toast.show();
             }
             else{
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext()) ;

@@ -22,29 +22,7 @@
             android:layout_centerVertical="true"
             android:id="@+id/pick_dish_picked_dish_name"
             android:textColor="@color/my_text_color"/>
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            tools:text="0"
-            android:inputType="number"
-            android:onClick="onSetPickedDishWeight"
-            android:textColor="@color/my_text_color"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"
-            android:layout_marginEnd="20dp"
-            android:id="@+id/pick_dish_picked_dish_weight"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/grams"
-            android:textColor="@color/my_text_color"
-            android:layout_centerVertical="true"
-            android:textSize="16sp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"/>
+
     </RelativeLayout>
     <ListView
         android:layout_width="wrap_content"

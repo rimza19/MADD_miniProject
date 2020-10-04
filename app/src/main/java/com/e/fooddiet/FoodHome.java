@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.e.fooddiet.dataBase.CalorieMaster;
 import com.e.fooddiet.dataBase.DBHelper;
+import com.e.fooddiet.entities.Account;
 import com.e.fooddiet.entities.Day;
 import com.e.fooddiet.utils.MyDate;
 
@@ -33,18 +34,20 @@ public class FoodHome extends AppCompatActivity {
     ImageButton btnNext, left, right;
     TextView setdate, setWeekday;
     TextView tvGoal, tvConsumed, tvNet;
+    EditText cWeight , gWeight ;
     private static final String TAG = "FoodHome";
-    Button chngProfile ;
 
     Day viewDay; // viewed day
     DBHelper db;
     SimpleAdapter dishesAdapter;
     ArrayList<Map<String, Object>> dishesData;
+    Account acc ;
 
     private static final int DATE_DIALOG = 1;
     private static final int VIEW_DISHES_DIALOG = 2;
     private TextView  mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
+
 
 
     @Override
@@ -60,16 +63,13 @@ public class FoodHome extends AppCompatActivity {
         tvGoal = findViewById(R.id.textViewGoalCal);
         tvConsumed = findViewById(R.id.textViewConsumed);
         tvNet = findViewById(R.id.textViewNet);
-        chngProfile = findViewById(R.id.chng_pro);
+        cWeight = findViewById(R.id.textViewCurrentWeight);
+        gWeight = findViewById(R.id.textViewGoalWeight);
 
+        acc = new Account();
 
-        chngProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(FoodHome.this,profile.class);
-                startActivity(i);
-            }
-        });
+        cWeight.setText(acc.getWeight());
+        gWeight.setText(acc.getGoal_weight());
 
         setdate.setOnClickListener(new View.OnClickListener() {
             @Override

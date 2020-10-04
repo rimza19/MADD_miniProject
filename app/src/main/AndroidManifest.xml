@@ -9,17 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".New_dish"></activity>
-        <activity android:name=".profile" />
-        <activity android:name=".Pick_dish" />
-        <activity android:name=".Add_dish" />
-        <activity android:name=".FoodHome" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Dashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".New_dish" />
+        <activity android:name=".profile" />
+        <activity android:name=".Pick_dish" />
+        <activity android:name=".Add_dish" />
+        <activity android:name=".FoodHome" />
+        <activity android:name=".MainActivity">
         </activity>
     </application>
 
