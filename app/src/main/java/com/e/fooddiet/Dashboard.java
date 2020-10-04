@@ -39,13 +39,6 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Dashboard.this,profile.class);
-                startActivity(i);
-            }
-        });
     }
 
     public void onExitButton(final View view) {

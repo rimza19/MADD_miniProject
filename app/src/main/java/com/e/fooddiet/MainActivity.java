@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
                 DatePickerDialog dialog = new DatePickerDialog(
                         MainActivity.this,
-                       /* android.R.style.Theme_Holo_Light_Dialog_MinWidth,*/
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         mDateSetListener,
                         year, month, day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -113,16 +113,15 @@ public class MainActivity extends AppCompatActivity {
             acc.setHeight(height.getText().toString());
             acc.setWeight(weight.getText().toString());
             acc.setGoal_weight(gweight.getText().toString());
-            acc.setWelcome(email.getText().toString());
-
-            String wel = acc.getWelcome() ;
+            acc.setWelcome("Inserted Successfully " + email.getText().toString());
 
             if(db.createAcc(acc)){
 
                 Intent i = new Intent(com.e.fooddiet.MainActivity.this,Dashboard.class);
                 startActivity(i);
-                /*Toast toast = new Toast(getApplicationContext());*/
-                Toast.makeText(getApplicationContext(),"welcome",Toast.LENGTH_SHORT).show();
+                Toast toast = Toast.makeText(getApplicationContext(),"!! " +acc.getWelcome()
+                        ,Toast.LENGTH_SHORT);
+                toast.show();
             }
             else{
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext()) ;
