@@ -20,7 +20,6 @@ public class Dashboard extends AppCompatActivity {
         dishes = findViewById(R.id.from_menu_to_dishes);
         exercise = findViewById(R.id.from_menu_to_exercises) ;
         water = findViewById(R.id.from_menu_to_water) ;
-        profile = findViewById(R.id.from_menu_to_profile);
         statistic = findViewById(R.id.from_menu_to_statistic);
         exit = findViewById(R.id.exit);
 

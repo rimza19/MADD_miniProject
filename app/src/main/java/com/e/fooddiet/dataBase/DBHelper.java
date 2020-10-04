@@ -23,6 +23,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "CalorieCounter.db";
     public static int dishSortId = 0; // will allow to keep the sorting we need for dishes when updating the screen
     private static Context context ;
+    public static final String DATABASE_NAME = "database_name";
+    public static final String TABLE_NAME = "table_name";
 
     public DBHelper(Context context) {
         super(context, DB_NAME, null, 3);
@@ -31,10 +33,6 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        /*db.execSQL("CREATE TABLE if not exists " + CalorieMaster.Calorie.DAYS_TABLE + " ( " + CalorieMaster.Calorie.COLUMN_ID +
-                " INTEGER primary key , " + CalorieMaster.Calorie.DISH_COLUMN_NAME + " text UNIQUE," +
-                CalorieMaster.Calorie.DISH_COLUMN_CALORIES_PER_100_GM + " integer not null" + ");"); // create table dishes
-*/
         db.execSQL("create table if not exists " + CalorieMaster.Calorie.DAYS_DISHES_TABLE + " ( " + CalorieMaster.Calorie.DAYS_COLUMN_DATE +
                 " integer, " + CalorieMaster.Calorie.DISH_COLUMN_NAME + " text, " + CalorieMaster.Calorie.DAYS_DISH_COLUMN_WEIGHT +
                 " integer default 100," + "FOREIGN KEY(" + CalorieMaster.Calorie.DAYS_COLUMN_DATE + ") REFERENCES " +
@@ -49,6 +47,10 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE if not exists " + CalorieMaster.Calorie.WEIGHT_TABLE + " ( " + CalorieMaster.Calorie._ID +
                 " INTEGER primary key autoincrement, " + CalorieMaster.Calorie.WEIGHT_COLUMN_CURRENT_WEIGHT +
                 "INTEGER not null," + CalorieMaster.Calorie.WEIGHT_COLUMN_GOAL_WEIGHT + "integer not null" + ");" );
+
+        //create table
+        String createTable ="CREATE TABLE "+TABLE_NAME+"(id INTEGER PRIMARY KEY AUTOINCREMENT, volume INTEGER)";
+        db.execSQL(createTable);
 
     }
 
@@ -70,6 +72,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         }
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
+        onCreate(sqLiteDatabase);
 
     }
 
@@ -462,6 +466,47 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return data;
     }
+
+    public boolean addWaterVolume(int volume){
+        //get writable database
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("waterVolume",volume);
+
+        sqLiteDatabase.insert(TABLE_NAME,null,values);
+        return true;
+    }
+
+    public ArrayList getConsumedWater(){
+        //get readable database
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        ArrayList<String> arrayList = new ArrayList<String>();
+
+        //create cursor to select all
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from "+TABLE_NAME,null);
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            arrayList.add(cursor.getString(cursor.getColumnIndex("volume")));
+            cursor.moveToNext();
+        }
+
+        return arrayList;
+    }
+
+    public int getTotalConsumedWater(){
+        int totalConsumed=0;
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+
+        Cursor cursor = sqLiteDatabase.rawQuery("select volume from "+TABLE_NAME,null);
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            int w= cursor.getInt(cursor.getColumnIndex("volume"));
+            totalConsumed = totalConsumed+ w;
+            cursor.moveToNext();
+        }
+        return totalConsumed;
+    }
+
 
 
 }

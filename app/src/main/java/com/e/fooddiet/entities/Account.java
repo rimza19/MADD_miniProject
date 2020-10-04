@@ -10,6 +10,7 @@ public class Account {
     private String height ;
     private String weight ;
     private String GWeight ;
+    private String welcome ;
 
     public int getId() {
         return id;
@@ -17,6 +18,14 @@ public class Account {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setWelcome(String welcome){
+        this.welcome = welcome ;
+    }
+
+    public String getWelcome(){
+        return welcome ;
     }
 
     public String getEmail() {

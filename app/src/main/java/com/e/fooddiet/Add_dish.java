@@ -29,7 +29,7 @@ public class Add_dish extends AppCompatActivity {
     DBHelper db ;
     ArrayList<Map<String, Object>> data;
     SimpleAdapter sAdapter;
-    File fileList ;
+    private static final int SET_WEIGHT = 1;
     long selectedElementId=-1;
 
     @Override
@@ -62,6 +62,7 @@ public class Add_dish extends AppCompatActivity {
             }
         });
 
+
         //creating intent
         okBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,5 +88,10 @@ public class Add_dish extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    public void onClick(View view)
+    {
+        onCreateDialog(SET_WEIGHT).show();
     }
 }
