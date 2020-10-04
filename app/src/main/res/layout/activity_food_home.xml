@@ -17,11 +17,30 @@
 
     <RelativeLayout style="@style/header_style">
 
-        <TextView
-            style="@style/header_text"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="@string/diary" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    style="@style/header_text"
+                    android:layout_width="169dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diary" />
+
+                <Button
+                    android:id="@+id/chng_pro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:text="Change Profile" />
+            </TableRow>
+
+        </TableLayout>
 
     </RelativeLayout>
 
@@ -59,18 +78,19 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:textSize="30sp"
-            android:text="Friday" />
+            android:text="Friday"
+            android:textSize="30sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/diary_set_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/diary_weekday"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:textSize="18sp"
-            android:text="@string/Today"/>
+            android:inputType="date"
+            tools:text="25.12.2015"
+            android:textSize="18sp" />
 
         <ImageButton
             android:id="@+id/diary_right_arrow"
@@ -164,9 +184,10 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:paddingTop="30dp">
+
         <TextView
             android:id="@+id/textViewUpdateWeight"
-            android:layout_width="162dp"
+            android:layout_width="152dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-black"
@@ -186,13 +207,12 @@
 
 
     <LinearLayout
-        android:layout_width="399dp"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:gravity="center_horizontal">
 
-     <!--   <TextView
+        <!--   <TextView
             android:id="@+id/textViewCurrentWeight"
             android:layout_width="221dp"
             android:layout_height="40dp"
@@ -207,16 +227,19 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="300dp"
             android:hint="@string/goWei" />-->
-        <TextView
+
+        <EditText
             android:id="@+id/textViewCurrentWeight"
-            android:layout_width="162dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:ems="10"
             android:fontFamily="sans-serif-condensed-light"
+            android:inputType="number"
             android:text="@string/curWei"
             android:textSize="18sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/textViewGoalWeight"
             android:layout_width="118dp"
             android:layout_height="wrap_content"
@@ -235,16 +258,16 @@
         android:paddingTop="30dp">
 
         <Button
-            android:id="@+id/UpdateCur"
-            android:layout_width="137dp"
+            android:id="@+id/displaywe"
+            android:layout_width="144dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:background="@color/colorAccent"
-            android:text="update" />
+            android:text="DISPLAY" />
 
         <Button
-            android:id="@+id/UpdateGo"
+            android:id="@+id/UpdateWe"
             android:layout_width="157dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"

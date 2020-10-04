@@ -1,16 +1,7 @@
 <resources>
     <string name="app_name">FitnessDial</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-
+    <!-- sign up strings -->
     <string name="header">Set Up Your Profile</string>
     <string name="email">Email</string>
     <string name="dob">Date of birth</string>
@@ -37,15 +28,6 @@
         <item>Very Active</item>
     </string-array>
 
-    <string-array name="food_list">
-        <item>Rice</item>
-        <item>Banana</item>
-        <item>Red Beans</item>
-        <item>Milk</item>
-        <item>Cereals</item>
-        <item>Potato</item>
-        <item>Rotti</item>
-    </string-array>
 
     <!--Food home page-->
     <string name="Today">Friday</string>
@@ -80,4 +62,11 @@
     <string name="menu">Menu</string>
     <string name="previous_day">To previous day</string>
     <string name="next_day">To next day</string>
+
+    <string name="error">Error</string>
+    <string name="ok">OK</string>
+    <string name="cant">Can not create Account</string>
+    <string name="profile">PROFILE</string>
+    <string name="new_dish">Dish Name</string>
+    <string name="cal">Calories per 100g</string>
 </resources>
