@@ -21,7 +21,7 @@
         android:textSize="30px" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -30,17 +30,18 @@
         android:layout_marginRight="30dp"
         android:text="@string/Weight"
         android:textColor="@color/colorWhite"
-        android:textSize="23px" />
+        android:textSize="26px" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/enWeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
-        android:hint="0.00 (Kg)" />
+        android:ems="10"
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView7"
@@ -52,44 +53,43 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         android:textColor="@color/colorWhite"
-        android:textSize="23px"/>
+        android:textSize="26px" />
 
 
     <RadioGroup
+        android:id="@+id/activity_level"
         android:layout_width="match_parent"
         android:layout_height="135dp">
 
-        <TextView
-            android:id="@+id/textView2"
+        <RadioButton
+            android:id="@+id/radio_activity_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
-            android:text="@string/gender"
-            android:textColor="@color/colorWhite"
-            android:textSize="23px" />
+            android:text="@string/activitylevel1" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radio_activity_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
-            android:text="@string/male" />
+            android:text="@string/activitylevel_2" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radio_activity_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
-            android:text="@string/female" />
+            android:text="@string/activitylevel_3" />
 
     </RadioGroup>
 
@@ -104,6 +104,18 @@
         android:textColor="@color/colorBlack"
         android:background="@drawable/round_corner"
         android:text="@string/calcTotIntake" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:textColor="@color/colorWhite" />
+
+
 
 
 </LinearLayout>
